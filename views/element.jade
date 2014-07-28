@@ -1,0 +1,92 @@
+extends layout
+
+block append stylesheets
+    style(type="text/css").
+        body {
+            background-color: #eff5f2;
+            width: 960px;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        form#element legend {
+            font-weight: bold;
+        }
+
+        form#element label {
+            font-weight: normal;
+        }
+
+block content
+    - if (success)
+        div.alert.alert-success #{success}
+    - if (error)
+        div.alert.alert-info #{error}
+    form(role="form", method="post", action="/daddylonglegs", id="element")
+        fieldset
+            legend Basic info
+                div.form-group
+                    label(for="month") Month
+                    input(type="text", id="month", name="month", class="form-control")
+                div.form-group
+                    label(for="day") Day
+                    input(type="text", id="day", name="day", class="form-control")
+                div.form-group
+                    label(for="album") Album
+                    input(type="text", id="album", name="album", class="form-control")
+                div.form-group
+                    label(for="artist") Artist
+                    input(type="text", id="artist", name="artist", class="form-control")
+                div.form-group
+                    label(for="year") Year
+                    input(type="text", id="year", name="year", class="form-control")
+                div.form-group
+                    label(for="type") Type
+                    input(type="text", id="type", name="type", class="form-control")
+                div.form-group
+                    label(for="bg_src") Background image source
+                    input(type="text", id="bg_src", name="bg_src", class="form-control")
+                div.form-group
+                    label(for="mp3_src") Default mp3 source
+                    input(type="text", id="mp3_src", name="mp3_src", class="form-control")
+                div.form-group
+                    label(for="ogg_src") Default ogg source
+                    input(type="text", id="ogg_src", name="ogg_src", class="form-control")
+                div.form-group
+                    label(for="album_src") Default album image source
+                    input(type="text", id="album_src", name="album_src", class="form-control")
+                div.form-group
+                    label(for="links") External sites links
+                    textarea(id="links", name="links", placeholder="{ type|href }的形式，類型和地址用|分隔，多個鏈接用;分隔", class="form-control")
+                div.form-group
+                    label(for="recommend") Brief recommendation
+                    textarea(id="recommend", name="recommend", class="form-control")
+                div.form-group
+                    label(for="hotlists") Hot song list
+                    textarea(id="hotlists", name="hotlists", placeholder="{ name|mp3src|oggsrc }的形式，名字和地址用|分隔，多個鏈接用;分隔", class="form-control")
+
+        fieldset
+            legend Review
+                div.form-group
+                    label(for="href") Original review source
+                    input(type="text", id="href", name="href", class="form-control")
+                div.form-group
+                    label(for="title") Review title
+                    input(type="text", id="title", name="title", class="form-control")
+                div.form-group
+                    label(for="author") Review author
+                    input(type="text", id="author", name="author", class="form-control")
+                div.form-group
+                    label(for="site_type") Original review site type
+                    input(type="text", id="site_type", name="site_type", class="form-control")
+                div.form-group
+                    label(for="content") Review content
+                    textarea(id="ontent", name="ontent", placeholder="各段間用|||分隔", class="form-control")
+
+        fieldset
+            legend Identity check
+                div.form-group
+                    label(for="admin") Admin
+                    input(type="text", id="admin", name="admin", class="form-control")
+
+        button(type="submit", class="btn btn-primary") 錄入

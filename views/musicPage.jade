@@ -1,0 +1,99 @@
+extends layout
+
+block append stylesheets
+    link(rel="stylesheet", href="/stylesheets/main.css", type="text/css")
+
+block content
+
+    div#preload
+        div#showboard
+            h1#when.nodisplay
+                span.year #{year}
+                |   年的今天
+            h1#who.nodisplay
+                case type
+                    when "album"
+                        span.hero #{album}
+                        |   問世
+                    when "artist"
+                        span.hero #{artist}
+                        |   來到人間
+
+    div#background
+        img(src='#{bg_src}', alt='#{artist}')
+
+    audio(id="mediaplayer", preload="auto", autoplay)
+
+    div#profile
+        img(src="#{album_src}", alt="#{album}")
+        case type
+            when "album" 
+                div.album
+                    span.category 專輯：
+                    |   #{album}
+                div.artist
+                    span.category 歌手：
+                    |   #{artist}
+                div.date
+                    span.category 發行時間：
+                    |   #{year}年#{month}月#{day}日
+            when "artist"
+                div.artist
+                    span.category 歌手：
+                    |   #{artist}
+                div.date
+                    span.category 生日：
+                    |   #{year}年#{month}月#{day}日 
+        ul.links
+            for link in links
+                case link.type
+                    when "wikipedia"
+                        li
+                            a(href="#{link.href}", target="_blank")
+                                img(width="16", height="16", alt="wikipedia", src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAAAEgAAABIAEbJaz4AAAEiSURBVCjPhdE/S9QBHMfx1/0wLDgC0aDo7KQ/1HA2nIJDEQpBUg9AqCWHtibH1sAn0OAciNEDEA5+gxAIQYvYEhHhIAeCHTdU1B3yaZArB833+v0un/db6inTy3H0UqYuZf5HWUnPGSfTr3TSVTFs1J4DVefsiwt++o5Rxa6XHij98tq8UscLyzq2LXqlrZj0TN9Z5z01Zk/ViOfGXXXDkluGaLpr1UM1j71VcVMD70yrQZK0MpFWknbuZS5fk3SylM9JkgLuaFj12yUzvhnGBxddAwVUPbFpS1fXD+v63ps7PBk6nHvfijdmNNWsqSs0BiYGylZyOQvZyafczmw2/qosBo+PXNFUd928EVP/XA5CHeRj9pMk7Xw5EuzUWE7L/Qc+kQAypIOHrwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wOS0wMlQwOToyNTowNS0wNDowMCgxabEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDktMDJUMDk6MjU6MDUtMDQ6MDBZbNENAAAAAElFTkSuQmCC")
+                    when "xiami"
+                        li
+                            a(href="#{link.href}", target="_blank")
+                                img(width="16", height="16", alt="xiami", src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAACW1BMVEXrggHsgAHrgADrfQLqfADregLqegHqdwLqdwPqcgLqcwPpbwPpbwTpawPpawToZgToZwXoYwToZAXnXwbmWwblVwXmWAfmVgfgUQi7QwfOSQfQSgfwhQHwhADwhAHwhQDwgwHylCPxjhfxhwnxixLxihLxihHxhQbvgALvfwHvfwD4yZT1r1/0pk3627f74MD74sb627j63Lj61q3ylizvfgPwhBDwhhT50qj2uXfykSjznULyljP2uXb62rbymTnymDbzmDfwhRLvgRH5z6T74MX+8+j869r848r3voLudwDzpFH50qvvfw/ueAHueQHuegPvgBb73sPzmUX606/1tHb1snL50anudQPzoVH85M3xji/udAHudgPufBb73MHwhyr4x5v0qGPzoFf5z6ntcQPynFD+9Oz738bymUntcwXtcgTueBb728HvhCz4xpzzpWTznVf5zqntbQPzm1P50bH0qm750LDwgyrtbALucxb74c35z6386Nn628L62sH4y6fsaATymFT4zq3tcxXvfyntdBfsaQTtaQrznWH1q3n73sr4xaP1qnfylVPsZAP5za7tbxXsYwLsZQXrYQbrXwPrXwL3wZ7zn2jvhj/whT7rXgLxk1P4zK7taxbrYAXrZBHwhUPymGH73sz62sb84dD5zbLsaBbxj1P4y67sZxfqXAXqXQftcCj4xKf4xaj2uJX0q4Lzn2/3wKDvgkPvhEf3wqTsZRfqWQbqWgfqWAnrYRbrXhLqWQvqVwbqVgXrXxTvezzrWw3qVwfoVAjpUwfpVAjpVAfpUgWP4UlrAAAAHHRSTlPA8vL09PT09PT09PT09PT09PT09PT09PTkW8LNHUuIeQAAAAlwSFlzAAAASAAAAEgARslrPgAAARNJREFUGNNjYJCRkZGVk5eFABkGBkYFBQVFJWUVFRVVFRU1dSYGZg1NLW0dXT09fQNDI2MTFgZWUzNzC0sraxtbO3sHRyc2BnZnF1c3dw9PL28fXz//AA4GzsCg4JDQsPCIyKjomNhYLgbuuPiExKTklNS09IzMrGweBt6c3Lz8gsKi4pLSsvKKSj4G/qrqmtq6+obGpuaW1rZ2AQbBjs6u7p7evv6+CRMnTZ4sxCA8Zeq06TNmzpo9Z+68+VOmCDOILFi4aPGSpcuWr1i5avWaNSIMomvXrd+wcdPmLVu3bd+xc6cYg/iu3Xv27tu/e8+Bg4f2HT4sziBx5OjRY8eOHT9+7MTxY8eOSDBISkkjASlJACsFYEzgXDU8AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEzLTA5LTAyVDA5OjEyOjAwLTA0OjAwATc7bgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMy0wOS0wMlQwOToxMjowMC0wNDowMHBqg9IAAAAASUVORK5CYII=")
+                    when "douban"
+                        li
+                            a(href="#{link.href}", target="_blank")
+                                img(width="16", height="16", alt="douban", src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAq1BMVEUzkkEAdxFEm1D///8bhSp9uYZ9uIZ9uIV8t4QbgyoAdhEqjDgqizgpijcAdBEAdRE6lkc6lEc3lETc7N4rizg3kUQ2lEPI4csAchDI4cw2kEPZ6tsqijcqjTjZ69w3kEQ7lkg7k0dEmlApiTYxjj4yjj8pijZEmFAAcxDe7eAEdBQEdxWJwJFmqnBmrXCJvpCSxZmSxJlUpF+o0K6oz62mzqylzatUoV8ykEAK8U5TAAAAAWJLR0QDEQxM8gAAAAlwSFlzAAAASAAAAEgARslrPgAAAJ5JREFUGNNdj9kSgjAMRYlRqxUTFRfcdy3uC6D//2WmxRnQ85CZnulNbz0PfvD+zmKghAVKIsqVqqo5lFJ1LRHd8Ju+IIPYilaeaGuJQAeDriPAHlvRx0FILAxxxNmN8WRqmeHciUW+Y+kErBDXm+0OcW8yoSM8EB8xCsm9AnDCM8MFr0bb6rdi9bsUezzjJE2ENInjF8t3mQx9MfT+AIAYDNvweEQNAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEzLTA5LTAyVDA5OjE1OjE1LTA0OjAwfXkPLgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMy0wOS0wMlQwOToxNToxNS0wNDowMAwkt5IAAAAASUVORK5CYII=")
+                    when "official"
+                        li
+                            a(href="#{link.href}", target="_blank")
+                                img(width="16", height="16",, alt="official", src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAO9JREFUeNqck7sOgjAUhg+mgYEJBpwJvooxGi9EV3k63TTBSV9GwiuwAIOU6ikXtYCm/ZMCvXxfG9pqjDGwbZuBWjSCcLAPlOjD8cAIfmRZBnEcS8Gu6/J3KyjLsjPodD71wv7G5wxmhI88z7lALLvtrleAfcj8XcFQcOzXCpqKmPASDkq+BLLwZ7iAFkWnrJcrADwddcF600Yp5WP4QbAsi008b3CG6+0Gi/kcihpoQgiBexRVP5EKnZ+ZTafVTEJ7w3DB44fgX7jA0A1I01QKNE3zLdANHZIkkRIg0wowzthRu46vXYB6s5T4pwADAFWngCUGeCgKAAAAAElFTkSuQmCC")
+
+        div.recommend
+            for para in recommend
+                p #{para}
+
+        div.hot
+            ul
+                for list in hotlists
+                    li
+                        a(href="#", data-mp3src="#{list.mp3src}", data-oggsrc="#{list.oggsrc}") #{list.name}
+
+    div#player
+        ul#controls
+            li#mainControl.pause
+                ul#changeSong.nodisplay
+                    li.prev
+                    li.next
+            li.loop
+            li.volume
+                span.volumebar
+                span.volumebar
+                span.volumebar
+                span.volumebar
+                span.volumebar
+                span.volumebar
+                span.volumebar
+                
+    //a(id='ex-link', href='http://weibo.com/3719716473', target='_blank', title='關注Juy')
+    
+                    
+block prepend scripts
+    script(src="/libs/jquery/dist/jquery.js", type="text/javascript")
+    script(src="/libs/jqueryui/jquery-ui.js", type="text/javascript")
+    script(src="/javascripts/main.js", type="text/javascript")              
