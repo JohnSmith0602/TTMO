@@ -18,7 +18,6 @@ module.exports = function (app) {
         switch (queryDay) {
             case '08-05':
                 return res.render('musicPage', {
-                    title: 'TTMO 向好音樂致敬',
                     album: 'Revolver',
                     artist: 'The Beatles',
                     year: 1966,
@@ -70,7 +69,6 @@ module.exports = function (app) {
         
             case '11-01':
                 return res.render('musicPage', {
-                    title: 'TTMO 向好音樂致敬',
                     album: '紅',
                     artist: '張國榮',
                     year: 1996,
