@@ -6,7 +6,7 @@
 module.exports = function (app) {
 	var index = function (req, res) {
 	    // TODO：自動計算日期。
-		currentDay = '11-01';
+		currentDay = '08-05';
 		
 		return res.redirect('/' + currentDay);    
 	};
@@ -16,9 +16,61 @@ module.exports = function (app) {
         var queryDay = req.params.queryDay;
         
         switch (queryDay) {
+            case '08-05':
+                return res.render('musicPage', {
+                    title: 'TTMO 向好音樂致敬',
+                    album: 'Revolver',
+                    artist: 'The Beatles',
+                    year: 1966,
+                    month: 8,
+                    day: 5,
+                    type: 'album',
+                    bg_src: 'http://s.yunshipei.com/david/temp/Revolver_bg.png',
+                    album_src: 'http://s.yunshipei.com/david/temp/Revolver.jpg',
+                    links: [
+                        {
+                            type: 'wikipedia',
+                            href: 'http://en.wikipedia.org/wiki/Revolver_beatles'
+                        },
+                        {
+                            type: 'xiami',
+                            href: 'http://www.xiami.com/album/50335'
+                        }, 
+                        {
+                            type: 'douban',
+                            href: 'http://music.douban.com/subject/1401364/'
+                        }
+                    ],
+                    recommend: [
+                        '"Revolver"，還有誰比Beatles更喜歡用這種怪誕的標題呢？這張專輯沒有任何與左輪手槍相關的東西，但它確實象征著一種東西——迷幻。',
+                        '這張 Beatles 成熟期的傑作被視作是他們最偉大的作品之一，2003年《滾石》雜誌評選的有史以來最偉大專輯中，《Revolver》位列第三位。',
+                        '本專輯的最佳作品主要出自 Paul 之手，但John 所作的 Tomorrow Never Knows 卻是本專輯的最大特征所在，這首歌是本專輯第壹首錄制完成的歌，其迷幻特性直接指向了下一張專輯"Sgt. Pepper\'s Lonely Hearts Club Band"，並且也是在本專輯內錄音技術體現方面的集大成者。'
+                    ],
+                    hotlists: [
+                        {
+                            name: "Eleanor Rigby",
+                            mp3src: "http://s.yunshipei.com/david/temp/EleanorRigby.mp3",
+                            oggsrc: "http://s.yunshipei.com/david/temp/EleanorRigby.ogg"
+                        }, {
+                            name: "Here, There and Everywhere",
+                            mp3src: "http://s.yunshipei.com/david/temp/HereThereandEverywhere.mp3",
+                            oggsrc: "http://s.yunshipei.com/david/temp/HereThereandEverywhere.ogg"
+                        }, {
+                            name: "Yellow Submarine",
+                            mp3src: "http://s.yunshipei.com/david/temp/YellowSubmarine.mp3",
+                            oggsrc: "http://s.yunshipei.com/david/temp/YellowSubmarine.ogg"
+                        }, {
+                            name: "Tomorrow Never Knows",
+                            mp3src: "http://s.yunshipei.com/david/temp/TomorrowNeverKnows.mp3",
+                            oggsrc: "http://s.yunshipei.com/david/temp/TomorrowNeverKnows.ogg"
+                        }
+                    ]
+                });
+                break;    
+        
             case '11-01':
                 return res.render('musicPage', {
-                    title: 'Juy 每天都有好音樂',
+                    title: 'TTMO 向好音樂致敬',
                     album: '紅',
                     artist: '張國榮',
                     year: 1996,

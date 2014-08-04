@@ -89,6 +89,7 @@ body {
 }
 
 #profile {
+    cursor: move;
 	position: absolute;
 	top: 50px;
 	left: 60px;
