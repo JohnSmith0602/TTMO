@@ -44,7 +44,7 @@ module.exports = function (app) {
                     recommend: [
                         '"Revolver"，還有誰比Beatles更喜歡用這種怪誕的標題呢？這張專輯沒有任何與左輪手槍相關的東西，但它確實象征著一種東西——迷幻。',
                         '這張Beatles成熟期的傑作被視作是他們最偉大的作品之一，2003年《滾石》雜誌評選的有史以來最偉大專輯中，"Revolver"位列第三位。',
-                        '本專輯的最佳作品主要出自 Paul 之手，但John 所作的 Tomorrow Never Knows 卻是本專輯的最大特征所在，這首歌是本專輯第壹首錄制完成的歌，其迷幻特性直接指向了下一張專輯"Sgt. Pepper\'s Lonely Hearts Club Band"，並且也是在本專輯內錄音技術體現方面的集大成者。'
+                        '本專輯的最佳作品主要出自Paul之手，但John所作的Tomorrow Never Knows卻是本專輯的最大特征所在，這首歌是本專輯第一首錄制完成的歌，其迷幻特性直接指向了下一張專輯"Sgt. Pepper\'s Lonely Hearts Club Band"，並且也是在本專輯內錄音技術體現方面的集大成者。'
                     ],
                     hotlists: [
                         {
