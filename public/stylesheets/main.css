@@ -22,6 +22,11 @@ a:focus {
     text-decoration: none;
 }
 
+/* 消除百度统计的丑陋图标 */
+body>a>img {
+    display: none;
+}
+
 .nodisplay {
 	display: none; 
 }
