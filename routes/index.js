@@ -6,7 +6,7 @@
 module.exports = function (app) {
 	var index = function (req, res) {
 	    // TODO：自動計算日期。
-		currentDay = '08-05';
+		currentDay = '08-09';
 		
 		return res.redirect('/' + currentDay);    
 	};
@@ -62,6 +62,59 @@ module.exports = function (app) {
                             name: "Tomorrow Never Knows",
                             mp3src: "http://s.yunshipei.com/david/temp/TomorrowNeverKnows.mp3",
                             oggsrc: "http://s.yunshipei.com/david/temp/TomorrowNeverKnows.ogg"
+                        }
+                    ]
+                });
+                break;
+                
+            case '08-09':
+                return res.render('musicPage', {
+                    artist: 'Whitney Houston',
+                    year: 1963,
+                    month: 8,
+                    day: 9,
+                    type: 'artist',
+                    bg_src: 'http://tothemusicalones-izebella.qiniudn.com/08-09/whitney_bg.jpg',
+                    album_src: 'http://tothemusicalones-izebella.qiniudn.com/08-09/whitney_cover.png',
+                    links: [
+                        {
+                            type: 'wikipedia',
+                            href: 'http://en.wikipedia.org/wiki/Whitney_Houston'
+                        },
+                        {
+                            type: 'xiami',
+                            href: 'http://www.xiami.com/artist/11627'
+                        }, 
+                        {
+                            type: 'douban',
+                            href: 'http://music.douban.com/musician/103715'
+                        }
+                    ],
+                    recommend: [
+                        '還記得第一次聽到她的聲音，那種震撼、快樂、自由和力量的感受。',
+                        '還記得第一次看到她的電影《保鏢》，驚豔於她的面容、笑容、身材、氣質和演技。',
+                        '還記得得知她失敗的婚姻和她遭遇的問題時的痛心和慼慼。',
+                        '還記得得知她去世時，對美好被摧毀和隕落的痛惜。',
+                        '她有我見過最美的面容，有我聽過最美的聲音，有我感覺到的最豐富的情感與真摯。',
+                        '她就是惠特尼·休斯頓。'
+                    ],
+                    hotlists: [
+                        {
+                            name: "When You Believe",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-09/When_You_Believe.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-09/When_You_Believe.ogg"
+                        }, {
+                            name: "Saving All My Love for You",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-09/Saving_All_My_Love_for_You.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-09/Saving_All_My_Love_for_You.ogg"
+                        }, {
+                            name: "Greatest Love of All",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-09/Greatest_Love_of_All.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-09/Greatest_Love_of_All.ogg"
+                        }, {
+                            name: "I Will Always Love You",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-09/I_Will_Always_Love_You.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-09/I_Will_Always_Love_You.ogg"
                         }
                     ]
                 });
