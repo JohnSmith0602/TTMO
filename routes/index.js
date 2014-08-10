@@ -122,7 +122,7 @@ module.exports = function (app) {
                 
             case '08-10':
                 return res.render('musicPage', {
-                    album: '盧冠廷2050香港演唱會',
+                    album: '盧冠廷2050演唱會',
                     artist: '盧冠廷',
                     year: 2008,
                     month: 8,
