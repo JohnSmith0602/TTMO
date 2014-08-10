@@ -6,7 +6,7 @@
 module.exports = function (app) {
 	var index = function (req, res) {
 	    // TODO：自動計算日期。
-		currentDay = '08-09';
+		currentDay = '08-10';
 		
 		return res.redirect('/' + currentDay);    
 	};
@@ -115,6 +115,57 @@ module.exports = function (app) {
                             name: "I Will Always Love You",
                             mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-09/I_Will_Always_Love_You.mp3",
                             oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-09/I_Will_Always_Love_You.ogg"
+                        }
+                    ]
+                });
+                break;
+                
+            case '08-10':
+                return res.render('musicPage', {
+                    album: '盧冠廷2050香港演唱會',
+                    artist: '盧冠廷',
+                    year: 2008,
+                    month: 8,
+                    day: 10,
+                    type: 'album',
+                    bg_src: 'http://tothemusicalones-izebella.qiniudn.com/08-10/2050_bg.png',
+                    album_src: 'http://tothemusicalones-izebella.qiniudn.com/08-10/2050.jpg',
+                    links: [
+                        {
+                            type: 'xiami',
+                            href: 'http://www.xiami.com/album/215936'
+                        }, 
+                        {
+                            type: 'douban',
+                            href: 'http://music.douban.com/subject/3178533/'
+                        }
+                    ],
+                    recommend: [
+                        '“90年演唱會曾讓你感動過，那麽我要說這一次的，是到了一個更高的境界，是我完全釋放了自己，毫無保留的，你所聽到的，是一個赤裸裸的我。”　——盧冠廷',
+                        '2050演唱會的舞臺很簡樸，是一條又一條長形木材搭成的，沒有機關，沒有五顏六色，沒有舞蹈演員。然而他所挑選的吉他手、打擊樂手、鋼琴手、二胡手等一衆樂手都是一流的，因爲盧冠廷本身就是個音樂人。',
+                        '演唱會上盧冠廷真情演繹了他所創作的爲大衆熟知的〈天鳥〉、〈陪着你走〉、〈一生所愛〉等歌曲，還和嘉賓林子祥、李宗盛等人合唱了〈最愛是誰〉、〈如風往事〉等經典曲目。'
+                    ],
+                    hotlists: [
+                        {
+                            name: "最愛是誰",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/ZuiAiShiShui.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/ZuiAiShiShui.ogg"
+                        }, {
+                            name: "如風往事",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/RuFengWangShi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/RuFengWangShi.ogg"
+                        }, {
+                            name: "一生所愛",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/YiShengSuoAi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/YiShengSuoAi.ogg"
+                        }, {
+                            name: "我未能忘掉你",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/WoWeiNengWangDiaoNi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/WoWeiNengWangDiaoNi.ogg"
+                        }, {
+                            name: "陪着你走",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/PeiZheNiZou.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/PeiZheNiZou.ogg"
                         }
                     ]
                 });
