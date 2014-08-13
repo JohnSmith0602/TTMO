@@ -6,7 +6,7 @@
 module.exports = function (app) {
 	var index = function (req, res) {
 	    // TODO：自動計算日期。
-		currentDay = '08-10';
+		currentDay = '08-13';
 		
 		return res.redirect('/' + currentDay);    
 	};
@@ -169,58 +169,105 @@ module.exports = function (app) {
                         }
                     ]
                 });
-                break;    
-        
-            case '11-01':
+                break;
+                
+            case '08-10':
                 return res.render('musicPage', {
-                    album: '紅',
-                    artist: '張國榮',
-                    year: 1996,
-                    month: 11,
-                    day: 1,
+                    album: '盧冠廷2050演唱會',
+                    artist: '盧冠廷',
+                    year: 2008,
+                    month: 8,
+                    day: 10,
                     type: 'album',
-                    bg_src: 'http://tothemusicalones-izebella.qiniudn.com/11-01/%E5%BC%B5%E5%9C%8B%E6%A6%AE.jpg',
-                    album_src: 'http://tothemusicalones-izebella.qiniudn.com/11-01/%E7%B4%85.jpg',
+                    bg_src: 'http://tothemusicalones-izebella.qiniudn.com/08-10/2050_bg.png',
+                    album_src: 'http://tothemusicalones-izebella.qiniudn.com/08-10/2050.jpg',
                     links: [
                         {
-                            type: 'wikipedia',
-                            href: 'http://en.wikipedia.org/wiki/Volk_(album)'
-                        },
-                        {
                             type: 'xiami',
-                            href: 'http://www.xiami.com/album/5829'
+                            href: 'http://www.xiami.com/album/215936'
                         }, 
                         {
                             type: 'douban',
-                            href: 'http://music.douban.com/subject/1412403/'
+                            href: 'http://music.douban.com/subject/3178533/'
                         }
                     ],
                     recommend: [
-                        '張國榮，原名張發宗，英文名Leslie，被歌迷/影迷叫做哥哥（Gorgor）。他是華人社會最有影響力的演藝人之一，香港知名男演員、歌手、舞臺表演者和詞曲創作者。作爲歌手，張國榮是粵語流行音樂的代表人物之一。',
-                        '《紅》是張國榮復出後繼《寵愛》發佈的第二張專輯，但在很多歌迷心目中，《紅》才算是張國榮復出後的第一張唱片。在《紅》中張國榮開始和林夕、C.Y.KONG全面合作，在音樂上成功轉型。',
-                        '《紅》專輯的重心顯然在一大堆慢歌上，或陰鬱、或性感、或恬淡、或濃豔，張國榮的演唱魅力得到了最好的發揮。'
+                        '“90年演唱會曾讓你感動過，那麽我要說這一次的，是到了一個更高的境界，是我完全釋放了自己，毫無保留的，你所聽到的，是一個赤裸裸的我。”',
+                        '2050演唱會的舞臺很簡樸，是一條又一條長形木材搭成的，沒有機關，沒有五顏六色，沒有舞蹈演員。然而他所挑選的吉他手、打擊樂手、鋼琴手、二胡手等一衆樂手都是一流的，因爲盧冠廷本身就是個音樂人。',
+                        '演唱會上盧冠廷真情演繹了他所創作的爲大衆熟知的〈天鳥〉、〈陪着你走〉、〈一生所愛〉等歌曲，還和嘉賓林子祥、李宗盛等人合唱了〈最愛是誰〉、〈如風往事〉等經典曲目。'
                     ],
                     hotlists: [
                         {
-                            name: "偷情",
-                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E5%81%B7%E6%83%85.mp3",
-                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E5%81%B7%E6%83%85.ogg"
+                            name: "最愛是誰",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/ZuiAiShiShui.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/ZuiAiShiShui.ogg"
                         }, {
-                            name: "有心人",
-                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%9C%89%E5%BF%83%E4%BA%BA.mp3",
-                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%9C%89%E5%BF%83%E4%BA%BA.ogg"
+                            name: "如風往事",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/RuFengWangShi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/RuFengWangShi.ogg"
                         }, {
-                            name: "怨男",
-                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%80%A8%E7%94%B7.mp3",
-                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%80%A8%E7%94%B7.ogg"
+                            name: "一生所愛",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/YiShengSuoAi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/YiShengSuoAi.ogg"
                         }, {
-                            name: "怪你過份美麗",
-                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%80%AA%E4%BD%A0%E9%81%8E%E4%BB%BD%E7%BE%8E%E9%BA%97.mp3",
-                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E6%80%AA%E4%BD%A0%E9%81%8E%E4%BB%BD%E7%BE%8E%E9%BA%97.ogg"
+                            name: "我未能忘掉你",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/WoWeiNengWangDiaoNi.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/WoWeiNengWangDiaoNi.ogg"
                         }, {
-                            name: "紅",
-                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E7%B4%85.mp3",
-                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/11-01/%E7%B4%85.ogg"
+                            name: "陪着你走",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-10/PeiZheNiZou.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-10/PeiZheNiZou.ogg"
+                        }
+                    ]
+                });
+                break;   
+        
+            case '08-13':
+                return res.render('musicPage', {
+                    album: 'Beautiful Freak',
+                    artist: 'Eels',
+                    year: 1996,
+                    month: 8,
+                    day: 13,
+                    type: 'album',
+                    bg_src: 'http://tothemusicalones-izebella.qiniudn.com/08-13/eels.jpg',
+                    album_src: 'http://tothemusicalones-izebella.qiniudn.com/08-13/Beautiful_Freak.jpg',
+                    links: [
+                        {
+                            type: 'wikipedia',
+                            href: 'http://en.wikipedia.org/wiki/Beautiful_Freak'
+                        },
+                        {
+                            type: 'xiami',
+                            href: 'http://www.xiami.com/album/110436'
+                        }, 
+                        {
+                            type: 'douban',
+                            href: 'http://music.douban.com/subject/1401275/'
+                        }
+                    ],
+                    recommend: [
+                        'EELS是壹支美國獨立樂隊，由三個成員組成，九十年代初年出道。',
+                        '他們的音樂不主流卻也並不另類，有著跟別的樂隊相比非常不同的氣質。',
+                        '他們的音樂是灰色調的，卻是淺而暖的灰，就像壹顆溫暖的眼淚緩緩流淌過幹涸的靈魂，如果不自己聽的話，絕無法領會到那種消極又無法決斷的情感。'
+                    ],
+                    hotlists: [
+                        {
+                            name: "Novocaine for the Soul",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-13/Novocaine_for_the_Soul.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-13/Novocaine_for_the_Soul.ogg"
+                        }, {
+                            name: "Beautiful Freak",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-13/Beautiful_Freak.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-13/Beautiful_Freak.ogg"
+                        }, {
+                            name: "Mental",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-13/Mental.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-13/Mental.ogg"
+                        }, {
+                            name: "Manchild",
+                            mp3src: "http://tothemusicalones-izebella.qiniudn.com/08-13/Manchild.mp3",
+                            oggsrc: "http://tothemusicalones-izebella.qiniudn.com/08-13/Manchild.ogg"
                         }
                     ]
                 });
